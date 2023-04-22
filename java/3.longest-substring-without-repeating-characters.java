@@ -15,10 +15,11 @@ class Solution {
         Map<Character, Integer> map = new HashMap<>();
         for (int i = 0, j = 0; j < n; j++) {
             if (map.containsKey(s.charAt(j))) {
+                // 更新重复字符字串起始位置
                 i = Math.max(i, map.get(s.charAt(j)));
             }
             length = Math.max(length, j - i + 1);
-            map.put(s.charAt(j), j+1 /* next index to begin if char exists */);
+            map.put(s.charAt(j), j + 1 /* next index to begin if char exists */);
         }
         return length;
     }

@@ -28,7 +28,7 @@ class Solution {
         // 随机确定支点的位置
         int pivotInt = RANDOM.nextInt(end - begin + 1) + begin;
         int pivot = a[pivotInt];
-        //选定基准值后，将基准值的位置和最开头的位置交换，这样在右边留出连续空间，便于交换
+        // 选定基准值后，将基准值的位置和最开头的位置交换，这样在右边留出连续空间，便于交换
         swap(a, pivotInt, begin);
 
         int left = begin;
