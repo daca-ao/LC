@@ -42,16 +42,13 @@ class Solution {
         ListNode last = rightNode.next;
         rightNode.next = null;
 
-        // 反转
-        reverseList(leftNode);
-
-        // 重新连接
-        pre.next = rightNode;
+        // 反转，再重新连接
+        pre.next = reverseList(leftNode);
         leftNode.next = last;
         return starter.next;
     }
 
-    private void reverseList(ListNode head) {
+    private ListNode reverseList(ListNode head) {
         ListNode result = null;
         while (head != null) {
             ListNode next = head.next;
@@ -59,6 +56,7 @@ class Solution {
             result = head;
             head = next;
         }
+        return result;
     }
 }
 // @lc code=end
